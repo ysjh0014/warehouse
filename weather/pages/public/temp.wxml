@@ -1,0 +1,69 @@
+<template name="wt_main">
+    <block wx:if="{{status == 'ok'}}">
+
+    <!-- 外部容器，可以纵向滚动 -->
+    <scroll-view class="outer" scroll-y>
+
+        <!-- 基本信息的view，包含城市、时间、更新日期等 -->
+        <view class="base_info inner">
+        <text class="city">{{city}}</text>
+        <text class="date">{{now}}</text>
+        <text class="update">{{upTime}} 更新</text>
+        </view>
+
+        <!-- 天气状况的view，主要包含当前文档，及天气状况 -->
+        <view class="wt_info inner">
+
+        <!-- 气温 -->
+        <text class="temp">{{temp}}℃</text>
+
+        <!-- 天气状况 -->
+        <text class="desc">{{desc}}</text>
+        </view>
+
+        <!-- 各种天气相关的指数，穿衣指数、洗车指数等，会有多个 -->
+        <view class="wt_index inner">
+            <text class="title">空气质量 : {{suggestion.air.brf}}</text>
+            <text>{{suggestion.air.txt}}</text>
+        </view>
+
+        <view class="wt_index inner">
+            <text class="title">舒适指数 : {{suggestion.comf.brf}}</text>
+            <text>{{suggestion.comf.txt}}</text>
+        </view>
+
+        <view class="wt_index inner">
+            <text class="title">洗车指数 : {{suggestion.cw.brf}}</text>
+            <text>{{suggestion.cw.txt}}</text>
+        </view>
+
+         <view class="wt_index inner">
+            <text class="title">穿衣指数 : {{suggestion.drsg.brf}}</text>
+            <text>{{suggestion.drsg.txt}}</text>
+        </view>
+
+        <view class="wt_index inner">
+            <text class="title">感冒指数 : {{suggestion.flu.brf}}</text>
+            <text>{{suggestion.flu.txt}}</text>
+        </view>
+
+        <view class="wt_index inner">
+            <text class="title">运动指数 : {{suggestion.sport.brf}}</text>
+            <text>{{suggestion.sport.txt}}</text>
+        </view>
+
+        <view class="wt_index inner">
+            <text class="title">旅游指数 : {{suggestion.trav.brf}}</text>
+            <text>{{suggestion.trav.txt}}</text>
+        </view>
+
+        <view class="wt_index inner">
+            <text class="title">紫外线指数 : {{suggestion.uv.brf}}</text>
+            <text>{{suggestion.uv.txt}}</text>
+        </view>
+    </scroll-view>
+    </block>
+    <block wx:else>
+    错误的城市信息
+    </block>
+</template>

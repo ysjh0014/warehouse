@@ -1,0 +1,32 @@
+{
+    "pages": [
+      "pages/index/index",
+      "pages/info/info",
+      "pages/search/search"
+    ],
+
+    "window": {
+      "navigationBarBackgroundColor": "#055674",
+      "navigationBarTextStyle": "white",
+      "navigationBarTitleText": "尚硅谷天气",
+      "backgroundColor": "#eeeeee",
+      "backgroundTextStyle": "light",
+      "enablePullDownRefresh": false
+    },
+
+    "tabBar": {
+      "selectedColor":"#5AC45A",
+      "borderStyle":"white",
+      "list": [{
+        "pagePath": "pages/index/index",
+        "text": "天气信息",
+        "iconPath":"src/image/wt.png",
+        "selectedIconPath":"src/image/wt-active.png"
+      },{
+        "pagePath": "pages/search/search",
+        "text": "选择城市",
+        "iconPath":"src/image/city.png",
+        "selectedIconPath":"src/image/city-active.png"
+      }]
+    }
+}

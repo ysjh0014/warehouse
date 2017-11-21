@@ -1,0 +1,6 @@
+<import  src="/pages/public/temp.wxml" />
+
+<template is="wt_main" data="{{...wd}}" />
+
+
+
