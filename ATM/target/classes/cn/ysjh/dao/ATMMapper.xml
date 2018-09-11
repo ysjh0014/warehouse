@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.ysjh.dao.ATMMapper">
+
+	<select id="register"  parameterType="cn.ysjh.pojo.register">
+		insert into register values(#{name},#{password},#{uuid})
+	</select>
+	<select id="account"  parameterType="cn.ysjh.pojo.account">
+		insert into account values(#{uuid},#{balance})
+	</select>
+	<select id="login" resultType="Integer">
+		select count(*) from register where name=#{name} and password=#{password}
+	</select>
+	<select id="get" resultType="String">
+	select uuid from register where name=#{name}
+	</select>
+	<select id="balance" resultType="String">
+	select balance from account where uuid=#{uuid}
+	</select>
+	<update id="update">
+	update register set password=#{password} where uuid=#{uuid}
+	</update>
+	<update id="input">
+	update account set balance = balance + #{num} where uuid=#{uuid}
+	</update>
+	<update id="output">
+	update account set balance = balance - #{num} where uuid=#{uuid}
+	</update>
+	
+</mapper>
