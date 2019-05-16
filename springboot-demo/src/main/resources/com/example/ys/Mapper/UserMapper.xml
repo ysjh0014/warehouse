@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.ys.Mapper.UserMapper"> <!--将这个接口指向对应的实现类,在接口中引入方法，和com.attendance.mapper.VocationMapper相对应-->
+
+	<select id="getUser" resultType="com.example.ys.Model.user">
+		select * from ys
+	</select>
+</mapper>
